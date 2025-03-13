@@ -1,6 +1,5 @@
 // src/components/BookCard.jsx
-
-import React from "react";
+import PropTypes from "prop-types";
 import "./BookCard.css"; // Import the CSS for styling
 
 const BookCard = ({ book }) => {
@@ -16,6 +15,15 @@ const BookCard = ({ book }) => {
       </div>
     </div>
   );
+};
+
+BookCard.propTypes = {
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    coverImage: PropTypes.string,
+  }).isRequired,
 };
 
 export default BookCard;
